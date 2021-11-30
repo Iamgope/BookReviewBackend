@@ -6,7 +6,15 @@ from datetime import datetime, timedelta
 
 from django.contrib.auth.models import User
 
-
+if not User.objects.filter(is_superuser=True).first():
+    user = User.objects.create(
+        username = 'admin',
+        email = 'admin@mywebsite.com',
+        is_superuser = True,
+    
+    )
+    user.set_password('12345678!')
+    user.save()
 class Category(models.Model):
     name = models.CharField(max_length=100)
 
