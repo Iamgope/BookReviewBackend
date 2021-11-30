@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import AddSubscription, AllPosts, PostByCategory, PostListByUser, QuestionList, SinglePost, SubscribedPostsByUser,AddPost, getSingleSubscription, getSubscriptions,PostResponses,PostFinalResponse,MyFinalAnswers,AnswerByQuestion,FinalResponseByPost,getAproovedSubscriptions
+from Base.views import AddSubscription, AllPosts, PostByCategory, PostListByUser, QuestionList, SinglePost, SubscribedPostsByUser,AddPost, getSingleSubscription, getSubscriptions,PostResponses,PostFinalResponse,MyFinalAnswers,AnswerByQuestion,FinalResponseByPost,getAproovedSubscriptions
 from django.views.generic import TemplateView
 
 app_name='Base'
