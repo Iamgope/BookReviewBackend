@@ -31,3 +31,14 @@ class FinalResponseSerializer(serializers.ModelSerializer):
    class Meta:
       fields=('id','User','Response','isLiked','username','AssociatedPost')
       model=FinalResponse
+
+class PictureSerialiser(serializers.ModelSerializer):
+
+    image_url = serializers.SerializerMethodField('get_image_url')
+
+    class Meta:
+        model = Post
+        fields = ('BookCoverImage')
+    def get_image_url(self, obj):
+        request = self.context.get("request")
+        return request.build_absolute_uri(obj.image.url)
