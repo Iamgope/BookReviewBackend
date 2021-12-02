@@ -1,7 +1,7 @@
 from django.urls import path
-from Base.views import AddSubscription, AllPosts, PostByCategory, PostListByUser, QuestionList, SinglePost, SubscribedPostsByUser,AddPost, getSingleSubscription, getSubscriptions,PostResponses,PostFinalResponse,MyFinalAnswers,AnswerByQuestion,FinalResponseByPost,getAproovedSubscriptions
+from Base.views import AddSubscription,AllPosts, PostByCategory, PostListByUser, QuestionList, SinglePost, SubscribedPostsByUser,AddPost, getSingleSubscription, getSubscriptions,PostResponses,PostFinalResponse,MyFinalAnswers,AnswerByQuestion,FinalResponseByPost,getAproovedSubscriptions
 from django.views.generic import TemplateView
-
+from Images.views import ImageAPIView
 app_name='Base'
 
 urlpatterns = [
@@ -24,6 +24,8 @@ urlpatterns = [
    # path('UnpublishedPosts/',UnPublishedPosts.as_view(),name="UnPublished_Posts"),
     path('MyFinalResponses/',MyFinalAnswers.as_view(),name="My Final Answers"),
     path('PostResponses/<questionId>/',AnswerByQuestion.as_view(),name="Answer_By_Question"),
+    path('image/<id>/',ImageAPIView.as_view(),name="Images")    
+
 #path('UserAnswer/<QuestionId>/',getUserAnswerByQuestion.as_view(),name="User_Answer")
     
 

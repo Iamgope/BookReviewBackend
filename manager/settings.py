@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'Base',
+    'rest_framework_swagger',
+    'Images',
 
 ]
 
