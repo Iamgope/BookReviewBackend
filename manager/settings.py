@@ -47,8 +47,7 @@ INSTALLED_APPS = [
     'Base',
      'cloudinary',
     'Images',
-   
-,
+
 ]
 
 MIDDLEWARE = [
