@@ -3,7 +3,7 @@ from django.db.models.deletion import CASCADE
 from django.db.models.fields import BooleanField
 from django.utils import timezone
 from datetime import datetime, timedelta
-
+from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
 
 
@@ -30,7 +30,7 @@ class Post(models.Model):
         Category, on_delete=models.PROTECT, default=1)
     title = models.CharField(max_length=250)
     excerpt = models.TextField(null=False)
-    BookCoverImage = models.FileField(upload_to="uploads/CoverImage")
+    BookCoverImage =  CloudinaryField('image')
     published = models.DateTimeField(default=timezone.now)
 
     status = models.CharField(

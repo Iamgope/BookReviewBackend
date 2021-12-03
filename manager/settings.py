@@ -11,7 +11,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 from datetime import timedelta
 import django_heroku
-
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 import os
 from pathlib import Path
 
@@ -44,7 +46,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'Base',
     'Images',
-
+    'cloudinary'
+,
 ]
 
 MIDDLEWARE = [
@@ -154,6 +157,11 @@ REST_FRAMEWORK = {
     ],
 }
 
+cloudinary.config( 
+  cloud_name = "iamgope", 
+  api_key = "341229549129795", 
+  api_secret = "a2vrUC5gqeJRXyMHu_KyQogYZO4" 
+)
 
 SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=15),
