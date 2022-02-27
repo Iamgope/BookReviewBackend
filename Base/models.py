@@ -30,7 +30,7 @@ class Post(models.Model):
         Category, on_delete=models.PROTECT, default=1)
     title = models.CharField(max_length=250)
     excerpt = models.TextField(null=False)
-    BookCoverImage =  CloudinaryField('image')
+    BookCoverImage = CloudinaryField('image')
     published = models.DateTimeField(default=timezone.now)
 
     status = models.CharField(
@@ -40,7 +40,7 @@ class Post(models.Model):
         User, on_delete=models.CASCADE, default=User)
     authorName = models.CharField(max_length=100)
     isPublished = models.BooleanField(default=False)
-    PostData = models.FileField(upload_to="uploads/PostData", default=0)
+    PostData = models.URLField(default="https://localhost:3000",null=True)
 
     objects = models.Manager()
     postobjects = PostObjects()

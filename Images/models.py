@@ -10,7 +10,7 @@ from Base.models import Post
 class photos(models.Model):
     # title field
     AssociatedPost = models.ForeignKey(
-        Post, on_delete=models.CASCADE, unique=True)
+        Post, on_delete=models.CASCADE, )
     # image field
     image = CloudinaryField('image')
 
